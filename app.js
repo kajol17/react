@@ -6,8 +6,11 @@ var path= require('path');
 cors =require('cors');
 var app=express();
 
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+
+//var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+//var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+var port=process.env.PORT||3000;
+
 
 app.use(cors());
 app.set("view engine","ejs");
@@ -23,6 +26,7 @@ app.use('/api',routes);
 /*app.listen(4003,function(){
     console.log('server started on port 4003');
 })*/
-app.listen(server_port, server_ip_address, function () {
-   console.log( "Listening on " + server_ip_address + ", port " + server_port )
- });
+
+app.listen(port,()=>{
+    console.log("listening..");
+});
