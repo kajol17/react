@@ -8,7 +8,7 @@ var app=express();
 
 //var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 //var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
-var port=process.env.Port||3000;
+var port=process.env.PORT||3000;
 
 app.use(cors());
 app.set("view engine","ejs");
